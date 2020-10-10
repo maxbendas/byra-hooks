@@ -14,6 +14,9 @@ const HookSwitcher = () => {
 
     const [color, setColor] = useState('gray')
     const [fontSize, setFontSize] = useState(14)
+    const minus = () => {
+        setFontSize((s) => s - 2)
+    }
 
     return (
         <div style={{padding: '10px', backgroundColor: color, fontSize: `${fontSize}px`}}>
@@ -27,13 +30,15 @@ const HookSwitcher = () => {
             }}>Light
             </button>
             <button onClick={() => {
-                setFontSize((s)=>s+2)
+                setFontSize((s) => s + 2)
             }}>+
+            </button>
+            <button onClick={minus}>-
             </button>
         </div>
     )
 }
 
-ReactDOM.render(<App />, document.getElementById('root'))    ;
+ReactDOM.render(<App/>, document.getElementById('root'));
 
 
